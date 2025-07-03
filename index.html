@@ -2190,9 +2190,9 @@
                 `*Total Pembayaran:* ${total}\n\n` +
                 `Mohon segera diproses ya. Terima kasih!`
             );
-            whatsappConfirmBtn.href = `https://wa.me/${adminWhatsappNumber}?text=${whatsappMessage}`;
+            whatsappConfirmBtn.href = `https://wa.me/${625343862846}?text=${whatsappMessage}`;
         } else if (whatsappConfirmBtn) { // Fallback jika tidak ada data pesanan di localStorage
-            whatsappConfirmBtn.href = `https://wa.me/${adminWhatsappNumber}?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
+            whatsappConfirmBtn.href = `https://wa.me/${625343862846}?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
         }
     }
 
