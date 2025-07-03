@@ -781,7 +781,7 @@
     @keyframes float {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
+      100% { transform: translateY(0px); }
     }
 
     @keyframes modalFadeIn {
@@ -1118,7 +1118,6 @@
             <div class="payment-method">
               <input type="radio" id="paymentQris" name="paymentMethod" value="QRIS" checked>
               <label for="paymentQris">
-                <!-- ICON QRIS DIHILANGKAN DI SINI -->
                 QRIS (All Payment)
               </label>
             </div>
@@ -1138,10 +1137,6 @@
   <!-- Success Modal -->
   <div class="modal" id="successModal">
     <div class="modal__content">
-      <div class="modal__header">
-        <h3 class="modal__title">Scan QRIS untuk Pembayaran</h3>
-        <button class="modal__close">&times;</button>
-      </div>
       <div class="modal__body text-center">
         <div class="success-icon">✅</div>
         <h3>Scan QRIS untuk Pembayaran</h3>
@@ -1152,7 +1147,8 @@
              style="max-width: 350px; border-radius: 12px; margin: 20px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 
         <!-- Ganti nomor WA di bawah ini pakai nomor kamu -->
-        <a href="#" id="whatsappConfirmBtn" class="btn btn--primary" target="_blank">
+        <a href="https://wa.me/6285343862846?text=Halo%20admin,%20saya%20sudah%20melakukan%20pembayaran%20dengan%20QRIS"
+           class="btn btn--primary" target="_blank">
            Kirim Bukti Pembayaran via WhatsApp
         </a>
       </div>
@@ -1475,9 +1471,6 @@
     const productModal = document.getElementById('productModal');
     const checkoutModal = document.getElementById('checkoutModal');
     const successModal = document.getElementById('successModal');
-    // Deklarasi whatsappConfirmBtn di sini agar bisa diakses
-    const whatsappConfirmBtn = document.getElementById('whatsappConfirmBtn');
-
 
     // Utility functions
     function formatPrice(price) {
@@ -1725,9 +1718,6 @@
 
       // FAQ accordion
       faqList.addEventListener('click', handleFAQClick);
-
-      // Hapus event listener langsung pada whatsappConfirmBtn di sini
-      // Karena href akan diatur sebelum modal ditampilkan, dan browser akan menangani klik secara alami.
     }
 
     // Add to cart
@@ -1836,10 +1826,11 @@
                       durationKeys.forEach(durationKey => {
                           const price = product.prices[type][durationKey];
                           const fullKey = `${type}-${durationKey}`;
+                          const durationText = getDurationText(fullKey);
                           pricingOptionsHTML += `
                               <input type="radio" id="duration-${productId}-${fullKey}" name="productDuration" value="${fullKey}" ${fullKey === defaultCheckedKey ? 'checked' : ''}>
                               <label for="duration-${productId}-${fullKey}">
-                                  ${getDurationText(fullKey).replace(`${type} (`, '').replace(')', '')}: <span>${formatPrice(price)}</span>
+                                  ${durationText.replace(`${type} (`, '').replace(')', '')}: <span>${formatPrice(price)}</span>
                               </label>
                           `;
                       });
@@ -1856,10 +1847,11 @@
 
                   durationKeys.forEach(durationKey => {
                       const price = product.prices[durationKey];
+                      const durationText = getDurationText(durationKey);
                       pricingOptionsHTML += `
                           <input type="radio" id="duration-${productId}-${durationKey}" name="productDuration" value="${durationKey}" ${durationKey === defaultCheckedKey ? 'checked' : ''}>
                           <label for="duration-${productId}-${durationKey}">
-                              ${getDurationText(durationKey)}: <span>${formatPrice(price)}</span>
+                              ${durationText}: <span>${formatPrice(price)}</span>
                           </label>
                       `;
                   });
@@ -2031,9 +2023,6 @@
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Memproses Pesanan...';
       submitBtn.disabled = true;
-       
-      // Sembunyikan modal checkout segera setelah submit
-      hideModal('checkoutModal');
 
       // Send data to Google Apps Script
       fetch(GOOGLE_APPS_SCRIPT_URL, {
@@ -2050,23 +2039,12 @@
       .then(data => {
         if (data.success) {
           console.log('Pesanan berhasil disimpan dan email dikirim:', data.message);
-          
-          // Simpan data pesanan ke localStorage HANYA JIKA pengiriman ke GAS berhasil
-          const orderDetails = {
-            customerName: customerName,
-            customerPhone: customerPhone,
-            products: productsOrdered,
-            total: totalPriceFormatted
-          };
-          localStorage.setItem('lastOrderDetails', JSON.stringify(orderDetails));
-
           cart = []; // Clear cart after successful order
           updateCartUI();
           document.getElementById('checkoutForm').reset(); // Reset form fields
 
-          // Tampilkan modal sukses setelah semua proses berhasil
+          hideModal('checkoutModal');
           showModal('successModal');
-          // setWhatsappLink() tidak lagi dipanggil di sini, karena logikanya sudah dipindahkan ke showModal
         } else {
           console.error('Gagal menyimpan pesanan:', data.message);
           alert('Terjadi kesalahan saat memproses pesanan. Mohon coba lagi atau hubungi admin. Pesan: ' + (data.message || 'Unknown error.'));
@@ -2109,37 +2087,6 @@
         modal.classList.add('active');
         if (modalId === 'cartModal') {
           renderCartItems();
-        } else if (modalId === 'successModal') {
-          // Panggil logika untuk mengatur href tombol WhatsApp di sini
-          const lastOrderDetails = JSON.parse(localStorage.getItem('lastOrderDetails'));
-          const adminWhatsappNumber = '6285343862846'; // Nomor WhatsApp admin Anda
-          let whatsappUrl;
-
-          if (lastOrderDetails) {
-              const customerName = lastOrderDetails.customerName;
-              const customerPhone = lastOrderDetails.customerPhone;
-              const products = lastOrderDetails.products;
-              const total = lastOrderDetails.total;
-
-              let productList = products.map(p => `- ${p.name} (${p.quantity}x)`).join('\n');
-              
-              const whatsappMessage = encodeURIComponent(
-                  `Halo admin, saya ${customerName} (${customerPhone}) sudah melakukan pembayaran untuk pesanan berikut:\n\n` +
-                  `*Detail Pesanan:*\n${productList}\n\n` +
-                  `*Total Pembayaran:* ${total}\n\n` +
-                  `Mohon segera diproses ya. Terima kasih!`
-              );
-              whatsappUrl = `https://wa.me/${adminWhatsappNumber}?text=${whatsappMessage}`;
-          } else { // Fallback jika tidak ada data pesanan di localStorage
-              whatsappUrl = `https://wa.me/${adminWhatsappNumber}?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
-          }
-
-          // Atur href tombol WhatsApp
-          if (whatsappConfirmBtn) {
-              whatsappConfirmBtn.href = whatsappUrl;
-          } else {
-              console.error("Elemen 'whatsappConfirmBtn' tidak ditemukan di DOM saat mencoba mengatur href.");
-          }
         }
       } else {
         console.error(`Modal dengan ID "${modalId}" tidak ditemukan.`);
