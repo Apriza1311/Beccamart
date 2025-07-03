@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Becca Mart - Beli Akun Premium Murah</title>
   <style>
-    /* Sebelum Perubahan */
+    /* ... (CSS Anda yang tidak berubah) ... */
     :root {
       --color-primary: #FF69B4; /* Hot Pink */
       --color-primary-dark: #E05C9E; /* Darker Pink */
@@ -1471,6 +1471,9 @@
     const productModal = document.getElementById('productModal');
     const checkoutModal = document.getElementById('checkoutModal');
     const successModal = document.getElementById('successModal');
+    // Tambahkan deklarasi untuk whatsappConfirmBtn di sini
+    const whatsappConfirmBtn = document.getElementById('whatsappConfirmBtn');
+
 
     // Utility functions
     function formatPrice(price) {
@@ -1498,10 +1501,6 @@
 
     // Helper to convert duration key to readable text
     function getDurationText(key) {
-      if (key === 'single_price') return 'Harga';
-if (key === '1 kali cek') return '1 KALI CEK';
-if (key === '5 kali cek') return '5 KALI CEK';
-
         // Handle complex keys like "Sharing-1_hari" or "Private-1_bulan"
         if (key.includes('-')) {
             const parts = key.split('-');
@@ -1725,26 +1724,15 @@ if (key === '5 kali cek') return '5 KALI CEK';
     }
 
     // Add to cart
-   function addToCart(productId, durationKey) {
-  const product = appData.products.find(p => p.id === productId);
-  if (!product) {
-    console.error('Produk tidak ditemukan:', productId);
-    return;
-  }
+    function addToCart(productId, durationKey) {
+      const product = appData.products.find(p => p.id === productId);
+      if (!product) {
+          console.error('Produk tidak ditemukan:', productId);
+          return;
+      }
 
-  // 💥 Tambahkan pengecekan untuk harga tunggal
-  if (typeof durationKey !== 'string') {
-    if (typeof product.prices === 'number') {
-      durationKey = 'single_price'; // force key-nya biar stabil
-    } else {
-      alert('Durasi belum dipilih atau tidak valid.');
-      return;
-    }
-  }
-
-  let salePrice;
-  let productNameWithDuration;
-
+      let salePrice;
+      let productNameWithDuration;
 
       // Determine salePrice based on product.prices structure
       if (typeof product.prices === 'object' && !Array.isArray(product.prices)) {
@@ -2038,16 +2026,9 @@ if (key === '5 kali cek') return '5 KALI CEK';
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Memproses Pesanan...';
       submitBtn.disabled = true;
-       // Simpan data pesanan ke localStorage sebelum menampilkan modal sukses
-      const orderDetails = {
-       customerName: customerName,
-      customerPhone: customerPhone,
-      products: productsOrdered,
-      total: totalPriceFormatted
-            };
-            localStorage.setItem('lastOrderDetails', JSON.stringify(orderDetails));
-            hideModal('checkoutModal');
-            showModal('successModal');
+       
+      // Sembunyikan modal checkout segera setelah submit
+      hideModal('checkoutModal');
 
       // Send data to Google Apps Script
       fetch(GOOGLE_APPS_SCRIPT_URL, {
@@ -2064,12 +2045,25 @@ if (key === '5 kali cek') return '5 KALI CEK';
       .then(data => {
         if (data.success) {
           console.log('Pesanan berhasil disimpan dan email dikirim:', data.message);
+          
+          // Simpan data pesanan ke localStorage HANYA JIKA pengiriman ke GAS berhasil
+          const orderDetails = {
+            customerName: customerName,
+            customerPhone: customerPhone,
+            products: productsOrdered,
+            total: totalPriceFormatted
+          };
+          localStorage.setItem('lastOrderDetails', JSON.stringify(orderDetails));
+
           cart = []; // Clear cart after successful order
           updateCartUI();
           document.getElementById('checkoutForm').reset(); // Reset form fields
 
-          hideModal('checkoutModal');
+          // Tampilkan modal sukses setelah semua proses berhasil
           showModal('successModal');
+          // Panggil fungsi untuk mengatur link WhatsApp
+          setWhatsappLink(); 
+
         } else {
           console.error('Gagal menyimpan pesanan:', data.message);
           alert('Terjadi kesalahan saat memproses pesanan. Mohon coba lagi atau hubungi admin. Pesan: ' + (data.message || 'Unknown error.'));
@@ -2176,27 +2170,32 @@ if (key === '5 kali cek') return '5 KALI CEK';
         });
       });
     }
-            if (lastOrderDetails) {
-                const customerName = lastOrderDetails.customerName;
-                const customerPhone = lastOrderDetails.customerPhone; // Nomor WA pelanggan
-                const products = lastOrderDetails.products;
-                const total = lastOrderDetails.total;
-                let productList = products.map(p => `- ${p.name} (${p.quantity}x)`).join('\n');
-                // Nomor WhatsApp admin (ganti dengan nomor Anda)
-                const adminWhatsappNumber = '6285343862846'; // Contoh: 6281234567890
-                // Pesan WhatsApp yang akan dikirim
-                const whatsappMessage = encodeURIComponent(
-                    `Halo admin, saya ${customerName} (${customerPhone}) sudah melakukan pembayaran untuk pesanan berikut:\n\n` +
-                    `*Detail Pesanan:*\n${productList}\n\n` +
-                    `*Total Pembayaran:* ${total}\n\n` +
-                    `Mohon segera diproses ya. Terima kasih!`
-                );
-                whatsappConfirmBtn.href = `https://wa.me/${adminWhatsappNumber}?text=${whatsappMessage}`;
-            } else {
-                // Fallback jika data tidak ditemukan (misal, halaman di-refresh setelah checkout)
-                whatsappConfirmBtn.href = `https://wa.me/6285343862846?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
-            }
-        // ... (sebelum document.addEventListener('DOMContentLoaded', init);, sekitar baris 1115) ...
+
+    // Fungsi baru untuk mengatur link WhatsApp
+    function setWhatsappLink() {
+        const lastOrderDetails = JSON.parse(localStorage.getItem('lastOrderDetails'));
+        const adminWhatsappNumber = '6285343862846'; // Nomor WhatsApp admin Anda
+
+        if (lastOrderDetails && whatsappConfirmBtn) { // Pastikan whatsappConfirmBtn sudah ada
+            const customerName = lastOrderDetails.customerName;
+            const customerPhone = lastOrderDetails.customerPhone;
+            const products = lastOrderDetails.products;
+            const total = lastOrderDetails.total;
+
+            let productList = products.map(p => `- ${p.name} (${p.quantity}x)`).join('\n');
+            
+            const whatsappMessage = encodeURIComponent(
+                `Halo admin, saya ${customerName} (${customerPhone}) sudah melakukan pembayaran untuk pesanan berikut:\n\n` +
+                `*Detail Pesanan:*\n${productList}\n\n` +
+                `*Total Pembayaran:* ${total}\n\n` +
+                `Mohon segera diproses ya. Terima kasih!`
+            );
+            whatsappConfirmBtn.href = `https://wa.me/${adminWhatsappNumber}?text=${whatsappMessage}`;
+        } else if (whatsappConfirmBtn) { // Fallback jika tidak ada data pesanan di localStorage
+            whatsappConfirmBtn.href = `https://wa.me/${adminWhatsappNumber}?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
+        }
+    }
+
     // Initialize app when DOM is loaded
     document.addEventListener('DOMContentLoaded', init);
   </script>
