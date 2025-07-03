@@ -781,7 +781,7 @@
     @keyframes float {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
+      100% { transform: translateY(0); }
     }
 
     @keyframes modalFadeIn {
@@ -1138,6 +1138,10 @@
   <!-- Success Modal -->
   <div class="modal" id="successModal">
     <div class="modal__content">
+      <div class="modal__header">
+        <h3 class="modal__title">Scan QRIS untuk Pembayaran</h3>
+        <button class="modal__close">&times;</button>
+      </div>
       <div class="modal__body text-center">
         <div class="success-icon">✅</div>
         <h3>Scan QRIS untuk Pembayaran</h3>
@@ -1722,38 +1726,8 @@
       // FAQ accordion
       faqList.addEventListener('click', handleFAQClick);
 
-      // Tambahkan event listener untuk tombol WhatsApp di modal sukses
-      if (whatsappConfirmBtn) {
-          whatsappConfirmBtn.addEventListener('click', function(e) {
-              e.preventDefault(); // Mencegah aksi default dari link <a>
-
-              const lastOrderDetails = JSON.parse(localStorage.getItem('lastOrderDetails'));
-              const adminWhatsappNumber = '6285343862846'; // Nomor WhatsApp admin Anda
-              let whatsappUrl;
-
-              if (lastOrderDetails) {
-                  const customerName = lastOrderDetails.customerName;
-                  const customerPhone = lastOrderDetails.customerPhone;
-                  const products = lastOrderDetails.products;
-                  const total = lastOrderDetails.total;
-
-                  let productList = products.map(p => `- ${p.name} (${p.quantity}x)`).join('\n');
-                  
-                  const whatsappMessage = encodeURIComponent(
-                      `Halo admin, saya ${customerName} (${customerPhone}) sudah melakukan pembayaran untuk pesanan berikut:\n\n` +
-                      `*Detail Pesanan:*\n${productList}\n\n` +
-                      `*Total Pembayaran:* ${total}\n\n` +
-                      `Mohon segera diproses ya. Terima kasih!`
-                  );
-                  whatsappUrl = `https://wa.me/${adminWhatsappNumber}?text=${whatsappMessage}`;
-              } else { // Fallback jika tidak ada data pesanan di localStorage
-                  whatsappUrl = `https://wa.me/${adminWhatsappNumber}?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
-              }
-
-              // Buka URL WhatsApp di tab baru
-              window.open(whatsappUrl, '_blank');
-          });
-      }
+      // Hapus event listener langsung pada whatsappConfirmBtn di sini
+      // Karena href akan diatur sebelum modal ditampilkan, dan browser akan menangani klik secara alami.
     }
 
     // Add to cart
@@ -1862,11 +1836,10 @@
                       durationKeys.forEach(durationKey => {
                           const price = product.prices[type][durationKey];
                           const fullKey = `${type}-${durationKey}`;
-                          const durationText = getDurationText(fullKey);
                           pricingOptionsHTML += `
                               <input type="radio" id="duration-${productId}-${fullKey}" name="productDuration" value="${fullKey}" ${fullKey === defaultCheckedKey ? 'checked' : ''}>
                               <label for="duration-${productId}-${fullKey}">
-                                  ${durationText.replace(`${type} (`, '').replace(')', '')}: <span>${formatPrice(price)}</span>
+                                  ${getDurationText(fullKey).replace(`${type} (`, '').replace(')', '')}: <span>${formatPrice(price)}</span>
                               </label>
                           `;
                       });
@@ -1883,11 +1856,10 @@
 
                   durationKeys.forEach(durationKey => {
                       const price = product.prices[durationKey];
-                      const durationText = getDurationText(durationKey);
                       pricingOptionsHTML += `
                           <input type="radio" id="duration-${productId}-${durationKey}" name="productDuration" value="${durationKey}" ${durationKey === defaultCheckedKey ? 'checked' : ''}>
                           <label for="duration-${productId}-${durationKey}">
-                              ${durationText}: <span>${formatPrice(price)}</span>
+                              ${getDurationText(durationKey)}: <span>${formatPrice(price)}</span>
                           </label>
                       `;
                   });
@@ -2094,7 +2066,7 @@
 
           // Tampilkan modal sukses setelah semua proses berhasil
           showModal('successModal');
-          // setWhatsappLink() tidak lagi dipanggil di sini, karena event listener langsung yang akan menanganinya
+          // setWhatsappLink() tidak lagi dipanggil di sini, karena logikanya sudah dipindahkan ke showModal
         } else {
           console.error('Gagal menyimpan pesanan:', data.message);
           alert('Terjadi kesalahan saat memproses pesanan. Mohon coba lagi atau hubungi admin. Pesan: ' + (data.message || 'Unknown error.'));
@@ -2137,6 +2109,37 @@
         modal.classList.add('active');
         if (modalId === 'cartModal') {
           renderCartItems();
+        } else if (modalId === 'successModal') {
+          // Panggil logika untuk mengatur href tombol WhatsApp di sini
+          const lastOrderDetails = JSON.parse(localStorage.getItem('lastOrderDetails'));
+          const adminWhatsappNumber = '6285343862846'; // Nomor WhatsApp admin Anda
+          let whatsappUrl;
+
+          if (lastOrderDetails) {
+              const customerName = lastOrderDetails.customerName;
+              const customerPhone = lastOrderDetails.customerPhone;
+              const products = lastOrderDetails.products;
+              const total = lastOrderDetails.total;
+
+              let productList = products.map(p => `- ${p.name} (${p.quantity}x)`).join('\n');
+              
+              const whatsappMessage = encodeURIComponent(
+                  `Halo admin, saya ${customerName} (${customerPhone}) sudah melakukan pembayaran untuk pesanan berikut:\n\n` +
+                  `*Detail Pesanan:*\n${productList}\n\n` +
+                  `*Total Pembayaran:* ${total}\n\n` +
+                  `Mohon segera diproses ya. Terima kasih!`
+              );
+              whatsappUrl = `https://wa.me/${adminWhatsappNumber}?text=${whatsappMessage}`;
+          } else { // Fallback jika tidak ada data pesanan di localStorage
+              whatsappUrl = `https://wa.me/${adminWhatsappNumber}?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
+          }
+
+          // Atur href tombol WhatsApp
+          if (whatsappConfirmBtn) {
+              whatsappConfirmBtn.href = whatsappUrl;
+          } else {
+              console.error("Elemen 'whatsappConfirmBtn' tidak ditemukan di DOM saat mencoba mengatur href.");
+          }
         }
       } else {
         console.error(`Modal dengan ID "${modalId}" tidak ditemukan.`);
@@ -2201,11 +2204,6 @@
         });
       });
     }
-
-    // setWhatsappLink() tidak lagi diperlukan sebagai fungsi terpisah yang dipanggil,
-    // karena logikanya sudah dipindahkan ke event listener langsung pada tombol.
-    // Namun, jika Anda ingin tetap memiliki fungsi ini untuk tujuan lain,
-    // Anda bisa membiarkannya, tetapi pastikan tidak ada pemanggilan ganda.
 
     // Initialize app when DOM is loaded
     document.addEventListener('DOMContentLoaded', init);
