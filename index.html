@@ -6,19 +6,28 @@
   <title>Becca Mart - Beli Akun Premium Murah</title>
   <style>
    :root {
-      --color-primary: #FFB6C1; /* Light Pink */
-      --color-primary-dark: #FF99AA; /* Slightly darker Light Pink */
-      --color-secondary: #8A2BE2; /* Blue Violet for accent, can be adjusted */
-      --color-accent: #FFE4E1; /* Misty Rose (very light pink) */
-      --color-text: #4A4A4A; /* Dark Gray for good readability */
-      --color-text-secondary: #777777; /* Medium Gray */
-      --color-border: #F0F0F0; /* Lighter border */
-      --color-bg: #FDF5E6; /* Old Lace (off-white, warm tone) or #F8F8F8 (light gray) */
-      --color-white: #FFFFFF;
-      --color-success: #66BB6A; /* Green for success */
-      --color-warning: #FFC107; /* Amber for warning */
-      --color-danger: #EF5350; /* Red for danger */
-    }
+  /* Colors */
+  --color-background: #FFF0F5;
+  --color-surface: rgba(255, 255, 253, 1);
+  --color-text: rgba(19, 52, 59, 1);
+  --color-text-secondary: rgba(98, 108, 113, 1);
+  --color-primary: #FF69B4; /* Hot Pink */
+  --color-primary-hover: #FFB6C1; /* Light Pink for hover */
+  --color-primary-active: #F472B6; /* Slightly darker pink for active state */
+  --color-secondary: rgba(94, 82, 64, 0.12);
+  --color-secondary-hover: rgba(94, 82, 64, 0.2);
+  --color-secondary-active: rgba(94, 82, 64, 0.25);
+  --color-border: rgba(94, 82, 64, 0.2);
+  --color-btn-primary-text: #3B3B3B;
+  --color-card-border: rgba(94, 82, 64, 0.12);
+  --color-card-border-inner: rgba(94, 82, 64, 0.12);
+  --color-error: rgba(192, 21, 47, 1);
+  --color-success: #66BB6A; /* Green for success */
+  --color-warning: rgba(168, 75, 47, 1);
+  --color-info: rgba(98, 108, 113, 1);
+  --color-focus-ring: rgba(33, 128, 141, 0.4);
+  --color-select-caret: rgba(19, 52, 59, 0.8);
+}
 
     * {
       margin: 0;
@@ -55,13 +64,6 @@
       font-size: 2.5rem;
       margin-bottom: 15px;
       color: var(--color-primary); /* Pink primary color */
-    }
-
-    .section-title p {
-      font-size: 1.1rem;
-      color: var(--color-text-secondary);
-      max-width: 700px;
-      margin: 0 auto;
     }
 
     /* Buttons */
