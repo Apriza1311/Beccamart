@@ -1148,8 +1148,7 @@
              style="max-width: 350px; border-radius: 12px; margin: 20px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 
         <!-- Ganti nomor WA di bawah ini pakai nomor kamu -->
-        <a href="https://wa.me/6285343862846?text=Halo%20admin,%20saya%20sudah%20melakukan%20pembayaran%20dengan%20QRIS"
-           class="btn btn--primary" target="_blank">
+        <a href="#" id="whatsappConfirmBtn" class="btn btn--primary" target="_blank">
            Kirim Bukti Pembayaran via WhatsApp
         </a>
       </div>
@@ -2024,6 +2023,16 @@
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Memproses Pesanan...';
       submitBtn.disabled = true;
+       // Simpan data pesanan ke localStorage sebelum menampilkan modal sukses
+      const orderDetails = {
+       customerName: customerName,
+      customerPhone: customerPhone,
+      products: productsOrdered,
+      total: totalPriceFormatted
+            };
+            localStorage.setItem('lastOrderDetails', JSON.stringify(orderDetails));
+            hideModal('checkoutModal');
+            showModal('successModal');
 
       // Send data to Google Apps Script
       fetch(GOOGLE_APPS_SCRIPT_URL, {
@@ -2152,7 +2161,28 @@
         });
       });
     }
-
+            if (lastOrderDetails) {
+                const customerName = lastOrderDetails.customerName;
+                const customerPhone = lastOrderDetails.customerPhone; // Nomor WA pelanggan
+                const products = lastOrderDetails.products;
+                const total = lastOrderDetails.total;
+                let productList = products.map(p => `- ${p.name} (${p.quantity}x)`).join('\n');
+                // Nomor WhatsApp admin (ganti dengan nomor Anda)
+                const adminWhatsappNumber = '6285343862846'; // Contoh: 6281234567890
+                // Pesan WhatsApp yang akan dikirim
+                const whatsappMessage = encodeURIComponent(
+                    `Halo admin, saya ${customerName} (${customerPhone}) sudah melakukan pembayaran untuk pesanan berikut:\n\n` +
+                    `*Detail Pesanan:*\n${productList}\n\n` +
+                    `*Total Pembayaran:* ${total}\n\n` +
+                    `Mohon segera diproses ya. Terima kasih!`
+                );
+                whatsappConfirmBtn.href = `https://wa.me/${adminWhatsappNumber}?text=${whatsappMessage}`;
+            } else {
+                // Fallback jika data tidak ditemukan (misal, halaman di-refresh setelah checkout)
+                whatsappConfirmBtn.href = `https://wa.me/6285343862846?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
+            }
+        }
+        // ... (sebelum document.addEventListener('DOMContentLoaded', init);, sekitar baris 1115) ...
     // Initialize app when DOM is loaded
     document.addEventListener('DOMContentLoaded', init);
   </script>
