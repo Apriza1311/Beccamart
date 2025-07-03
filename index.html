@@ -1498,6 +1498,10 @@
 
     // Helper to convert duration key to readable text
     function getDurationText(key) {
+      if (key === 'single_price') return 'Harga';
+if (key === '1 kali cek') return '1 KALI CEK';
+if (key === '5 kali cek') return '5 KALI CEK';
+
         // Handle complex keys like "Sharing-1_hari" or "Private-1_bulan"
         if (key.includes('-')) {
             const parts = key.split('-');
@@ -1721,15 +1725,26 @@
     }
 
     // Add to cart
-    function addToCart(productId, durationKey) {
-      const product = appData.products.find(p => p.id === productId);
-      if (!product) {
-          console.error('Produk tidak ditemukan:', productId);
-          return;
-      }
+   function addToCart(productId, durationKey) {
+  const product = appData.products.find(p => p.id === productId);
+  if (!product) {
+    console.error('Produk tidak ditemukan:', productId);
+    return;
+  }
 
-      let salePrice;
-      let productNameWithDuration;
+  // 💥 Tambahkan pengecekan untuk harga tunggal
+  if (typeof durationKey !== 'string') {
+    if (typeof product.prices === 'number') {
+      durationKey = 'single_price'; // force key-nya biar stabil
+    } else {
+      alert('Durasi belum dipilih atau tidak valid.');
+      return;
+    }
+  }
+
+  let salePrice;
+  let productNameWithDuration;
+
 
       // Determine salePrice based on product.prices structure
       if (typeof product.prices === 'object' && !Array.isArray(product.prices)) {
