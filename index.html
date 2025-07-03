@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Becca Mart - Beli Akun Premium Murah</title>
   <style>
-    /* ... (CSS Anda yang tidak berubah) ... */
+    /* Sebelum Perubahan */
     :root {
       --color-primary: #FF69B4; /* Hot Pink */
       --color-primary-dark: #E05C9E; /* Darker Pink */
@@ -1118,7 +1118,7 @@
             <div class="payment-method">
               <input type="radio" id="paymentQris" name="paymentMethod" value="QRIS" checked>
               <label for="paymentQris">
-                <img src="https://i.postimg.cc/sDnZ9Wmw/IMG-20250623-WA0012-1.jpg" alt="Logo QRIS" class="payment-method__icon">
+                <!-- ICON QRIS DIHILANGKAN DI SINI -->
                 QRIS (All Payment)
               </label>
             </div>
@@ -1471,7 +1471,7 @@
     const productModal = document.getElementById('productModal');
     const checkoutModal = document.getElementById('checkoutModal');
     const successModal = document.getElementById('successModal');
-    // Tambahkan deklarasi untuk whatsappConfirmBtn di sini
+    // Deklarasi whatsappConfirmBtn di sini agar bisa diakses
     const whatsappConfirmBtn = document.getElementById('whatsappConfirmBtn');
 
 
@@ -2176,23 +2176,28 @@
         const lastOrderDetails = JSON.parse(localStorage.getItem('lastOrderDetails'));
         const adminWhatsappNumber = '6285343862846'; // Nomor WhatsApp admin Anda
 
-        if (lastOrderDetails && whatsappConfirmBtn) { // Pastikan whatsappConfirmBtn sudah ada
-            const customerName = lastOrderDetails.customerName;
-            const customerPhone = lastOrderDetails.customerPhone;
-            const products = lastOrderDetails.products;
-            const total = lastOrderDetails.total;
+        // Pastikan whatsappConfirmBtn sudah dideklarasikan dan ada di DOM
+        if (whatsappConfirmBtn) { 
+            if (lastOrderDetails) {
+                const customerName = lastOrderDetails.customerName;
+                const customerPhone = lastOrderDetails.customerPhone;
+                const products = lastOrderDetails.products;
+                const total = lastOrderDetails.total;
 
-            let productList = products.map(p => `- ${p.name} (${p.quantity}x)`).join('\n');
-            
-            const whatsappMessage = encodeURIComponent(
-                `Halo admin, saya ${customerName} (${customerPhone}) sudah melakukan pembayaran untuk pesanan berikut:\n\n` +
-                `*Detail Pesanan:*\n${productList}\n\n` +
-                `*Total Pembayaran:* ${total}\n\n` +
-                `Mohon segera diproses ya. Terima kasih!`
-            );
-            whatsappConfirmBtn.href = `https://wa.me/${625343862846}?text=${whatsappMessage}`;
-        } else if (whatsappConfirmBtn) { // Fallback jika tidak ada data pesanan di localStorage
-            whatsappConfirmBtn.href = `https://wa.me/${625343862846}?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
+                let productList = products.map(p => `- ${p.name} (${p.quantity}x)`).join('\n');
+                
+                const whatsappMessage = encodeURIComponent(
+                    `Halo admin, saya ${customerName} (${customerPhone}) sudah melakukan pembayaran untuk pesanan berikut:\n\n` +
+                    `*Detail Pesanan:*\n${productList}\n\n` +
+                    `*Total Pembayaran:* ${total}\n\n` +
+                    `Mohon segera diproses ya. Terima kasih!`
+                );
+                whatsappConfirmBtn.href = `https://wa.me/${adminWhatsappNumber}?text=${whatsappMessage}`;
+            } else { // Fallback jika tidak ada data pesanan di localStorage
+                whatsappConfirmBtn.href = `https://wa.me/${adminWhatsappNumber}?text=${encodeURIComponent('Halo admin, saya sudah melakukan pembayaran. Mohon dibantu cek pesanan saya.')}`;
+            }
+        } else {
+            console.error("Elemen 'whatsappConfirmBtn' tidak ditemukan di DOM.");
         }
     }
 
