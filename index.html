@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Becca Mart - Beli Akun Premium Murah</title>
+  <style>
+    :root {
+      --color-primary: #FF69B4; /* Hot Pink */
+      --color-primary-dark: #E05C9E; /* Darker Pink */
+      --color-secondary: #8A2BE2; /* Blue Violet for accent, can be adjusted */
+      --color-accent: #FFD1DC; /* Light Pink for subtle accents */
+      --color-text: #4A4A4A; /* Dark Gray for good readability */
+      --color-text-secondary: #777777; /* Medium Gray */
+      --color-border: #F0F0F0; /* Lighter border */
+      --color-bg: #FFF0F5; /* Lavender Blush for soft background */
+      --color-white: #FFFFFF;
+      --color-success: #66BB6A; /* Green for success */
+      --color-warning: #FFC107; /* Amber for warning */
+      --color-danger: #EF5350; /* Red for danger */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Playful font, but still readable */
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--color-primary); /* Pink primary color */
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .btn--primary {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .btn--primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2); /* Pinkish shadow */
+    }
+
+    .btn--secondary {
+      background-color: var(--color-white);
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+    }
+
+    .btn--secondary:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .btn--full-width {
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--color-white);
+      box-shadow: 0 2px 15px rgba(255, 105, 180, 0.1); /* Pinkish shadow */
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary); /* Pink primary color */
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--color-secondary); /* Secondary color for contrast */
+    }
+
+    .nav__links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav__links li {
+      margin-left: 30px;
+    }
+
+    .nav__links a {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav__links a:hover {
+      color: var(--color-primary); /* Pink primary color on hover */
+    }
+
+    .cart-btn {
+      display: flex;
+      align-items: center;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cart-btn:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3); /* Pinkish shadow on hover */
+    }
+
+    .cart-count {
+      background-color: var(--color-secondary); /* Secondary color for contrast */
+      color: var(--color-white);
+      font-size: 0.8rem;
+      padding: 2px 6px;
+      border-radius: 50%;
+      margin-left: 8px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); /* Pink gradient */
+      color: var(--color-white);
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__content {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .hero__title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero__subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .hero__buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .hero__image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero__image img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 30px rgba(255, 105, 180, 0.4)); /* Pinkish shadow for image */
+    }
+
+    /* Products */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .product-card {
+      background-color: var(--color-white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.08); /* Subtle pink shadow */
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(255, 105, 180, 0.15); /* More prominent pink shadow on hover */
+    }
+
+    .product-card__image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--color-accent); /* Light pink border */
+    }
+
+    .product-card__content {
+      padding: 20px;
+    }
+
+    .product-card__header {
+      margin-bottom: 15px;
+    }
+
+    .product-card__title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .product-card__rating {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--color-primary); /* Pink stars */
+    }
+
+    .product-card__rating span:first-child {
+      margin-right: 5px;
+    }
+
+    .product-card__description {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .product-card__pricing {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap; /* Allow wrapping for multiple prices */
+    }
+
+    .price--original {
+      /* MODIFIKASI: Hapus garis pada harga asli */
+      /* text-decoration: line-through; */
+      /* MODIFIKASI: Ubah warna menjadi pink dan perbesar ukuran */
+      color: var(--color-primary); /* Hot Pink */
+      font-weight: 600; /* Tambahkan agar lebih tebal */
+      font-size: 1.2rem; /* Perbesar sedikit */
+      margin-right: 0; /* Hapus margin-right karena hanya ada satu harga */
+    }
+
+    /* MODIFIKASI: Hapus seluruh blok CSS untuk harga sale (pink sebelumnya) */
+    /*
+    .price--sale {
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-right: 10px;
+    }
+    */
+
+    /* MODIFIKASI: Hapus seluruh blok CSS untuk tag diskon */
+    /*
+    .price--savings {
+      background-color: var(--color-success);
+      color: var(--color-white);
+      font-size: 0.8rem;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+    */
+
+    .product-card__features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .product-card__features li {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 5px;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .product-card__features li:before {
+      content: "💖"; /* Cute heart icon */
+      color: var(--color-primary); /* Pink heart */
+      position: absolute;
+      left: 0;
+    }
+
+    .product-card__actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Product Modal specific styles */
+    .product-detail__pricing-options {
+        margin-bottom: 20px;
+    }
+    .product-detail__pricing-options label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 8px 12px;
+        border: 1px solid var(--color-border);
+        border-radius: 5px;
+        transition: all 0.2s ease;
+        /* Pastikan latar belakang default putih dan teks default hitam/abu-abu */
+        background-color: var(--color-white);
+        color: var(--color-text);
+    }
+    .product-detail__pricing-options label:hover {
+        background-color: var(--color-accent);
+        border-color: var(--color-primary);
+    }
+    .product-detail__pricing-options input[type="radio"] {
+        margin-right: 8px;
+        display: none; /* Hide default radio button */
+    }
+    /* Ketika radio button terpilih, terapkan styling ke label */
+    .product-detail__pricing-options input[type="radio"]:checked + label {
+        background-color: var(--color-primary); /* Latar belakang pink saat terpilih */
+        color: var(--color-white); /* Teks label (misal "1 Bulan:") menjadi putih saat terpilih */
+        border-color: var(--color-primary);
+    }
+    /* Ini adalah aturan kunci untuk warna teks harga */
+    .product-detail__pricing-options label span {
+        font-weight: 600;
+        color: var(--color-primary); /* Hot Pink untuk harga saat label tidak terpilih */
+    }
+    /* Ini adalah aturan kunci untuk warna teks harga saat label terpilih */
+    .product-detail__pricing-options input[type="radio"]:checked + label span {
+        color: var(--color-white); /* Putih untuk harga saat label terpilih */
+    }
+
+
+    /* Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .benefit-card {
+      background-color: var(--color-white);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.08); /* Subtle pink shadow */
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 105, 180, 0.15); /* More prominent pink shadow on hover */
+    }
+
+    .benefit-card__icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--color-primary); /* Pink icon */
+    }
+
+    .benefit-card__title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .benefit-card__description {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background-color: var(--color-white);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.08); /* Subtle pink shadow */
+    }
+
+    .testimonial-card__header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card__avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .testimonial-card__info h4 {
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .testimonial-card__info p {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .testimonial-card__rating {
+      color: var(--color-primary); /* Pink stars */
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card__text {
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    .faq-item {
+      background-color: var(--color-white);
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 10px rgba(255, 105, 180, 0.05); /* Subtle pink shadow */
+      overflow: hidden;
+      border: 1px solid var(--color-accent); /* Light pink border */
+    }
+
+    .faq-item__question {
+      width: 100%;
+      padding: 20px;
+      text-align: left;
+      background: none;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-item__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+    }
+
+    .faq-item.active .faq-item__answer {
+      max-height: 500px;
+      padding: 0 20px 20px;
+    }
+
+    .faq-item.active .faq-item__toggle {
+      transform: rotate(180deg);
+    }
+
+    .faq-item__toggle {
+      transition: transform 0.3s ease;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #FF69B4 0%, #E05C9E 100%); /* Pink gradient */
+      color: var(--color-white);
+      padding: 60px 0 30px;
+    }
+
+    .footer__content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer__logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-white);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer__about {
+      margin-bottom: 20px;
+      opacity: 0.8;
+      line-height: 1.7;
+    }
+
+    .footer__title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--color-white);
+    }
+
+    .footer__links {
+      list-style: none;
+    }
+
+    .footer__links li {
+      margin-bottom: 10px;
+    }
+
+    .footer__links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer__links a:hover {
+      color: var(--color-white);
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer__social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2); /* Lighter pinkish social icons */
+      color: var(--color-white);
+      transition: all 0.3s ease;
+    }
+
+    .footer__social a:hover {
+      background-color: var(--color-secondary); /* Use secondary color for hover */
+      transform: translateY(-3px);
+    }
+
+    .footer__copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Modals */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 200;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal__content {
+      background-color: var(--color-white);
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    .modal__header {
+      padding: 20px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .modal__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .modal__close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--color-text-secondary);
+    }
+
+    .modal__body {
+      padding: 20px;
+    }
+
+    /* Cart Modal */
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item__info h4 {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .cart-item__price {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .cart-item__remove {
+      background: none;
+      border: none;
+      color: var(--color-danger);
+      cursor: pointer;
+      margin-left: 15px;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .cart-actions {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Checkout Modal */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .payment-methods {
+      margin: 20px 0;
+    }
+
+    .payment-method {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .payment-method input {
+      margin-right: 10px;
+    }
+
+    .payment-method label {
+      display: flex;
+      align-items: center;
+    }
+
+    .payment-method__icon {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .order-summary {
+      background-color: var(--color-bg);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    /* Success Modal */
+    .success-icon {
+      font-size: 4rem;
+      color: var(--color-success);
+      margin-bottom: 20px;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slide-in-left {
+      from {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+
+    .bounce-in {
+      animation: bounce-in 0.6s ease;
+    }
+
+    .slide-in-left {
+      animation: slide-in-left 0.6s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header__inner {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .logo {
+        margin-bottom: 15px;
+      }
+
+      .nav__links {
+        margin-top: 15px;
+      }
+
+      .nav__links li {
+        margin-left: 15px;
+      }
+
+      .hero__inner {
+        flex-direction: column;
+      }
+
+      .hero__content {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .hero__buttons {
+        justify-content: center;
+      }
+
+      .hero__title {
+        font-size: 2.5rem;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .modal__content {
+        width: 95%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav__links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav__links li {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .hero__title {
+        font-size: 2rem;
+      }
+
+      .hero__buttons {
+        flex-direction: column;
+      }
+
+      .product-card__actions {
+        flex-direction: column;
+      }
+
+      .cart-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="logo">Becca<span>Mart</span></a>
+        <ul class="nav__links">
+          <li><a href="#products">Produk</a></li>
+          <li><a href="#benefits">Keuntungan</a></li>
+          <li><a href="#testimonials">Testimoni</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <button id="cartBtn" class="cart-btn">
+          Keranjang <span id="cartCount" class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">Beli Akun Premium Dengan Harga Terbaik</h1>
+          <p class="hero__subtitle">Dapatkan akses penuh ke aplikasi premium favorit Anda dengan harga spesial hingga 70% lebih murah dari harga resmi.</p>
+          <div class="hero__buttons">
+            <a href="#products" class="btn btn--primary">Lihat Produk</a>
+            <a href="#benefits" class="btn btn--secondary">Pelajari Lebih</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="https://i.postimg.cc/brc45dR5/file-0000000053c061f9a9634fb28b44b2f8.png" alt="Ilustrasi berbagai aplikasi premium seperti Canva, Spotify, dan Netflix tersedia di Becca Mart">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Produk Kami</h2>
+        <p>Temukan berbagai akun premium berkualitas dengan harga terbaik untuk kebutuhan kreativitas, produktivitas, dan hiburan Anda.</p>
+      </div>
+      <div id="productsGrid" class="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="section" style="background-color: var(--color-bg);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Keuntungan Belanja di Becca Mart</h2>
+        <p>Mengapa ribuan pelanggan memilih kami sebagai tempat untuk membeli akun premium mereka</p>
+      </div>
+      <div id="benefitsGrid" class="benefits-grid"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Apa Kata Pelanggan Kami</h2>
+        <p>Testimoni jujur dari pelanggan yang sudah merasakan manfaat berlangganan melalui Becca Mart</p>
+      </div>
+      <div id="testimonialsGrid" class="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section" style="background-color: var(--color-bg);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Pertanyaan yang Sering Diajukan</h2>
+        <p>Temukan jawaban atas pertanyaan-pertanyaan umum tentang layanan kami</p>
+      </div>
+      <div id="faqList" class="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer__content">
+        <div>
+          <a href="#" class="footer__logo">Becca<span>Mart</span></a>
+          <p class="footer__about">Becca Mart adalah platform terpercaya untuk pembelian akun premium dengan harga terjangkau sejak 2024.</p>
+          <div class="footer__social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__title">Produk</h3>
+          <ul class="footer__links">
+            <li><a href="#">Design Tools</a></li>
+            <li><a href="#">Music & Video</a></li>
+            <li><a href="#">Productivity</a></li>
+            <li><a href="#">Streaming</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__title">Tautan</h3>
+          <ul class="footer__links">
+            <li><a href="#products">Produk</a></li>
+            <li><a href="#benefits">Keuntungan</a></li>
+            <li><a href="#testimonials">Testimoni</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__title">Kontak</h3>
+          <ul class="footer__links">
+            <li><a href="mailto:info@beccamart.com">info@beccamart.com</a></li>
+            <li><a href="tel:+6281234567890">0812-3456-7890</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">Syarat & Ketentuan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        &copy; 2024 Becca Mart. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3 class="modal__title" id="productModalTitle"></h3>
+        <button class="modal__close">&times;</button>
+      </div>
+      <div class="modal__body">
+        <div id="productModalContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3 class="modal__title">Keranjang Belanja</h3>
+        <button class="modal__close">&times;</button>
+      </div>
+      <div class="modal__body">
+        <div id="cartItems"></div>
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">Rp 0</span>
+        </div>
+        <div class="cart-actions">
+          <button id="continueShoppingBtn" class="btn btn--secondary">Lanjut Belanja</button>
+          <button id="checkoutBtn" class="btn btn--primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <h3 class="modal__title">Checkout</h3>
+        <button class="modal__close">&times;</button>
+      </div>
+      <div class="modal__body">
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="customerName">Nama Lengkap</label>
+            <input type="text" id="customerName" name="customerName" required>
+          </div>
+          <div class="form-group">
+            <label for="customerEmail">Email</label>
+            <input type="email" id="customerEmail" name="customerEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="customerPhone">Nomor WhatsApp</label>
+            <input type="tel" id="customerPhone" name="customerPhone" required>
+          </div>
+
+          <!-- START: Perubahan Kolom Kota/Provinsi dan Jenis Device -->
+          <div class="form-group">
+            <label for="customerCityProvince">Kota dan Provinsi</label>
+            <input type="text" id="customerCityProvince" name="customerCityProvince" placeholder="Contoh: Jakarta, DKI Jakarta" required>
+          </div>
+          <div class="form-group">
+            <label for="customerDevice">Jenis Device</label>
+            <input type="text" id="customerDevice" name="customerDevice" placeholder="Contoh:Redmi Note 13, Laptop Acer, MacBook" required>
+          </div>
+          <!-- END: Perubahan Kolom Kota/Provinsi dan Jenis Device -->
+
+          <div class="order-summary">
+            <h4>Ringkasan Pesanan</h4>
+            <div id="orderSummary"></div>
+          </div>
+
+          <div class="payment-methods">
+            <h4>Metode Pembayaran</h4>
+            <div class="payment-method">
+              <input type="radio" id="paymentQris" name="paymentMethod" value="QRIS" checked>
+              <label for="paymentQris">
+                <img src="https://i.postimg.cc/sDnZ9Wmw/IMG-20250623-WA0012-1.jpg" alt="Logo QRIS" class="payment-method__icon">
+                QRIS (All Payment)
+              </label>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-top: -10px; margin-bottom: 20px;">
+            Lanjut ke WhatsApp untuk konfirmasi setelah pembayaran.
+          </p>
+
+          <button type="submit" class="btn btn--primary btn--full-width" style="margin-top: 20px;">
+            Bayar Sekarang
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal__content">
+      <div class="modal__body text-center">
+        <div class="success-icon">✅</div>
+        <h3>Scan QRIS untuk Pembayaran</h3>
+        <p>Setelah kamu bayar, kirim bukti transfer ke WhatsApp admin ya 💖</p>
+
+        <!-- Ganti link gambar di bawah ini pakai gambar QRIS kamu -->
+        <img src="https://i.postimg.cc/sDnZ9Wmw/IMG-20250623-WA0012-1.jpg" alt="QRIS"
+             style="max-width: 300px; border-radius: 12px; margin: 20px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+        <!-- Ganti nomor WA di bawah ini pakai nomor kamu -->
+        <a href="https://wa.me/6285343862846?text=Halo%20admin,%20saya%20sudah%20melakukan%20pembayaran%20dengan%20QRIS"
+           class="btn btn--primary" target="_blank">
+           Kirim Bukti Pembayaran via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Application data (pastikan data ini sudah benar dan sesuai dengan struktur yang diharapkan)
+    const appData = {
+      "products": [
+        {
+          "id": 1,
+          "name": "Canva Pro",
+          "description": "Akses unlimited ke semua fitur Canva termasuk template premium, background remover, dan brand kit.",
+          "prices": { "1_hari": 4000, "3_hari": 6000, "5_hari": 7000, "1_minggu": 9000, "1_bulan": 13000, "1_tahun": 32000},
+          "originalPrice": 13000, // Placeholder for display, actual price depends on duration
+          "image": "https://i.postimg.cc/h43ngqtZ/fitur-canva.png",
+          "features": ["Template Premium Unlimited", "Background Remover", "Brand Kit", "Resize Magic", "Animation", "1TB Cloud Storage"],
+          "rating": 4.8,
+          "reviews": 263
+        },
+        {
+          "id": 2,
+          "name": "Capcut Pro",
+          "description": "Fitur editing video profesional, efek premium, dan tanpa watermark.",
+          "prices": {
+              "Private": {"1_hari": 5000, "7_hari": 7000, "1_bulan": 44000},
+              "Sharing": {"1_bulan": 23000}
+          },
+          "originalPrice": 44000,
+          "image": "https://i.postimg.cc/SKbHnjXd/capcut-1024x576.webp",
+          "features": ["Tanpa watermark, semua fitur terbuka!",
+            "Efek & filter premium eksklusif!",
+             "Export kualitas HD tanpa batas!",
+             "Bisa remove background otomatis!",
+             "Akses font, musik, dan template premium!"],
+          "rating": 4.7,
+          "reviews": 67
+        },
+        {
+          "id": 3,
+          "name": "Viu",
+          "description": "Biar makin betah di rumah, temani harimu bareng ribuan drama dan film Asia di VIU. Tinggal duduk, nonton, bahagia!",
+          "prices": {
+              "Harian": {"1_hari": 3000, "5_hari": 5000, "7_hari": 8000},
+              "Private Anti Limit":{"1_bulan": 13000, "3_bulan": 18000, "6_bulan": 23000}
+          },
+          "originalPrice": 13000,
+          "image": "https://i.postimg.cc/k4sr39gc/viu-768x402.png",
+          "features": ["Bebas iklan", "gratis download", "nonton lebih cepat", "kualitas jernih"],
+          "rating": 4.6,
+          "reviews": 29
+        },
+        {
+          "id": 4,
+          "name": "HBO GO",
+          "description": "Nonton film box office dan serial HBO Originals eksklusif cuma di HBO GO!",
+          "prices":{
+          "Sharing": { "1_hari": 4000, "3_hari": 7000, "1_minggu": 12000, "1_bulan": 26000, "3_bulan": 37000},"Private": {"1_bulan": 75000}
+          },
+          "originalPrice": 75000,
+          "image": "https://i.postimg.cc/g0nXB7x5/images-1.jpg",
+          "features": ["Tanpa iklan", "akses eksklusif", "kualitas HD", "bebas download!","multi device"],
+          "rating": 4.5,
+          "reviews": 58
+        },
+        {
+          "id": 5,
+          "name": "Turnitin",
+          "description": "Cek plagiarisme instan, laporan akurat, langsung tahu hasilnya!.",
+          "prices": 3000, // Harga tunggal
+          "originalPrice": 3000,
+          "image": "https://i.postimg.cc/SsCmRBTw/default-social-image.png",
+          "features": ["Cek plagiarisme cepat", "hasil detail", "laporan bisa diunduh!", "terjamin valid"],
+          "rating": 4.4,
+          "reviews": 127
+        },
+        {
+          "id": 6,
+          "name": "Scribd",
+          "description": "Akses dan dapatkan ribuan eBook, audiobook, dan dokumen eksklusif cuma di Scribd!",
+          "prices": {
+              "Sharing": {"1_hari": 3000, "1_minggu": 8000, "1_bulan": 11000}, "Private": {"1_bulan (private)": 20000 }
+              },
+          "originalPrice": 20000,
+          "image": "https://i.postimg.cc/j2KV3Lxj/018666100-1720078811-scrib.jpg",
+          "features": ["Akses unlimited eBook & audiobook!",
+            "Download buku untuk dibaca offline!",
+            "Baca dokumen premium tanpa batas!",
+            "Rekomendasi cerdas sesuai minatmu!"],
+          "rating": 4.4,
+          "reviews": 39
+        },
+        {
+          "id": 7,
+          "name": "Unlock Docs",
+          "description": "Satu klik buat buka file di Scribd, Academia, Course Hero, dll – gampang dan cepat! harganya per file yah",
+          "prices": 3000, // Harga tunggal
+          "originalPrice": 3000,
+          "image": "https://i.postimg.cc/vByhn983/1000123752.jpg",
+          "features": ["Buka dokumen Scribd, Academia, dan lainnya!",
+               "Proses cepat, tanpa login akun platform!",
+                "Tanpa batasan jumlah file!",
+                "Dukungan banyak format & link!",
+                "Privasi aman, hasil bisa langsung diunduh!"],
+          "rating": 4.6,
+          "reviews": 109
+        },
+        {
+          "id": 8,
+          "name": "Amazon Prime Video",
+          "description": "Film Hollywood, serial original, dan tayangan eksklusif cuma di Prime Video!",
+          "prices": {
+              "Sharing 5u": {"1_hari": 3000, "3_hari": 5000, "5_hari": 7000, "1_minggu": 9000},
+              "Private": {"1_bulan": 30000 }
+          },
+          "originalPrice": 30000, // Ini adalah harga patokan untuk tampilan awal, bisa disesuaikan
+          "image": "https://i.postimg.cc/wMPMZCvM/primevideo-seo-logo.png", // Ganti dengan gambar Prime Video yang sesuai
+          "features": ["Film & Serial Hollywood", "Amazon Originals", "Kualitas HD", "Download untuk Offline", "Multi-device"],
+          "rating": 4.7,
+          "reviews": 37
+        },
+        {
+          "id": 9,
+          "name": "BStation",
+          "description": "Nonton anime, variety show, dan drama Asia eksklusif cuma di Bstation!",
+          "prices": {
+              "Sharing": {"1_hari": 2000, "3_hari": 4000, "1_minggu": 6000, "1_bulan": 12000, "3_bulan": 20000, "1_Tahun":30000},"Private": {"1_bulan": 38000}
+          },
+          "originalPrice": 38000,
+          "image": "https://i.postimg.cc/nh3X8SLv/5-6-1024x445.jpg",
+          "features": ["Streaming tanpa iklan!",
+             "Akses episode lebih awal!",
+             "Kualitas video hingga Full HD & 4K!",
+             "Subtitle lengkap berbagai bahasa!",
+             "Bisa download dan tonton offline!"],
+          "rating": 4.6,
+          "reviews": 76
+        },
+        {
+          "id": 10,
+          "name": "Youtube Premium",
+          "description": "Tonton video tanpa iklan, putar di latar belakang, dan download video.",
+          "prices": {
+              "Famplan": {"1_bulan": 10000, "2_bulan":15000 }
+          },
+          "Pricenote": "Acc Store +3k",
+          "originalPrice": 10000,
+          "image": "https://i.postimg.cc/4d9vxR7C/202403011308-main.jpg",
+          "features": ["Ad-Free Viewing", "Background Play", "Offline Downloads", "Youtube Music Premium", "Originals Access", "Picture-in-Picture"],
+          "rating": 4.7,
+          "reviews": 32
+        },
+        {
+          "id": 11,
+          "name": "Netflix Premium",
+          "description": "streaming film yang lagi viral tanpa batas dalam kualitas Ultra HD.",
+          "prices": {
+              "Sharing 1P1U": {"1_minggu": 25000, "1_bulan": 50000},"Private": {"1_bulan(5P)":150000}
+          },
+
+          "originalPrice": 50000,
+          "image": "https://i.postimg.cc/0yKy3kLq/netflix.jpg",
+          "features": ["4K Ultra HD", "4 Screens Simultaneous", "Download Content", "No Ads", "All Regions Content", "Premium Support"],
+          "rating": 4.8,
+          "reviews": 327
+        },
+        {
+          "id": 12,
+          "name": "WeTV VIP",
+          "description": "Akses eksklusif ke drama Asia terbaru dan variety show.",
+          "prices": {
+              "Sharing 6U": {"1_hari": 4000, "1_bulan": 14000, "2_bulan": 17000}, "Private": {"1_bulan": 38000}
+              },
+          "originalPrice": 38000,
+          "image": "https://i.postimg.cc/gkkCrgDS/howto-apply-wetv-02.jpg",
+          "features": ["Exclusive Content", "Ad-Free", "HD Quality", "Offline Download", "Multi-device Sync", "Early Access"],
+          "rating": 4.8,
+          "reviews": 175
+        },
+        {
+          "id": 13,
+          "name": "IQIYI VIP",
+          "description": "Tonton drama Korea, China, dan anime terbaru tanpa iklan.",
+          "prices": {
+              "Sharing": {"1_hari": 3000, "3_hari": 6000, "1_minggu": 8000, "1_bulan": 15000},"Private" : {"1_bulan": 35000 }
+              },
+          "originalPrice": 35000,
+          "image": "https://i.postimg.cc/7hGTNFrH/cara-berlangganan-iqiyie-e1697165386209-630x359.webp",
+          "features": ["Bebas Iklan", "Kualitas Video HD", "Gratis Download", "Nikmati Subtitle berbagi Bahasa", "Akses Duluan", "Dapatkan Akses Atas Film eksklusif"],
+          "rating": 4.7,
+          "reviews": 83
+        },
+        {
+          "id": 14,
+          "name": "Vidio Premier",
+          "description": "Streaming olahraga, film, dan serial lokal & internasional.",
+          "prices": {
+              "Mobile": {"Sharing 2u": {"1_hari": 4000},"Private": {"1_minggu": 18000, "1_bulan": 30000}
+              }, "All Device": { "Private": {"1_bulan": 35000}}
+              },
+          "originalPrice": 35000,
+          "image": "https://i.postimg.cc/ZqbBQBzD/068152400-1595829578-Premier-No-Ads-Push-Notif-Push-Notif-Newsletter-970x576.webp",
+          "features": ["Live Sports", "Original Series", "Hollywood Movies", "Local Content", "Ad-Free", "HD Streaming"],
+          "rating": 4.6,
+          "reviews": 79
+        },
+        {
+          "id": 15,
+          "name": "Disney+ Hotstar",
+          "description": "Rumah bagi film dan serial Disney, Marvel, Star Wars, dan lainnya.",
+          "prices": {
+              "Plan Premium Sharing 1 device": {"1_minggu": 25000, "1_bulan": 50000 }
+              },
+          "originalPrice": 50000,
+          "image": "https://i.postimg.cc/3NhfPQYB/099384700-1573713233-disney-plus11.webp",
+          "features": ["Disney, Marvel, Star Wars", "Pixar, National Geographic", "Hotstar Originals", "HD Streaming", "Offline Download", "Multiple Profiles"],
+          "rating": 4.8,
+          "reviews": 164
+        },
+        {
+          "id": 16,
+          "name": "Grammarly Premium",
+          "description": "Asisten penulisan AI untuk meningkatkan tata bahasa, ejaan, dan gaya.",
+          "prices": { "1 kali cek": 3000, "5 kali cek": 10000},
+          "originalPrice": 3000,
+          "image": "https://i.postimg.cc/NGbxgH4Y/images-3.jpg",
+          "features": ["Grammar & Spelling Check", "Plagiarism Checker", "Clarity & Engagement", "Tone Detection", "Vocabulary Enhancement", "Integrasi Aplikasi"],
+          "rating": 4.8,
+          "reviews": 26
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "Mohamad Zaenal",
+          "role": "Data Analysis",
+          "avatar": "https://placehold.co/60x60?text=SW",
+          "rating": 5,
+          "text": "Sangat puas dengan layanan ini! Canva Pro yang saya beli bekerja dengan sempurna dan harganya jauh lebih murah dari official."
+        },
+        {
+          "name": "Geyrald Lenda",
+          "role": "Eksekutor Maba",
+          "avatar": "https://placehold.co/60x60?text=BS",
+          "rating": 5,
+          "text": "Proses pembelian mudah dan cepat. Akun premium langsung aktif setelah pembayaran. Recommended banget!"
+        },
+        {
+          "name": "Apriliana",
+          "role": "Marketing Manager",
+          "avatar": "https://placehold.co/60x60?text=MC",
+          "rating": 5,
+          "text": "Pelayanan customer service sangat responsif. Netflix Premium berjalan lancar dan sudah 6 bulan tanpa masalah."
+        }
+      ],
+      "benefits": [
+        {
+          "icon": "💰",
+          "title": "Harga Terjangkau",
+          "description": "Hemat hingga 70% dari harga official dengan kualitas yang sama"
+        },
+        {
+          "icon": "⚡",
+          "title": "Aktivasi Instant",
+          "description": "Akun langsung aktif dalam 5-10 menit setelah pembayaran berhasil"
+        },
+        {
+          "icon": "🔒",
+          "title": "100% Aman",
+          "description": "Transaksi aman dengan enkripsi SSL dan jaminan uang kembali"
+        },
+        {
+          "icon": "🎯",
+          "title": "Garansi Penuh",
+          "description": "Garansi replace gratis jika akun bermasalah dalam 30 hari"
+        },
+        {
+          "icon": "🏆",
+          "title": "Kualitas Premium",
+          "description": "Semua fitur premium tersedia penuh tanpa batasan apapun"
+        },
+        {
+          "icon": "💬",
+          "title": "Support 24/7",
+          "description": "Tim customer service siap membantu Anda kapan saja"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Apakah akun yang dijual original?",
+          "answer": "Ya, semua akun yang kami jual adalah akun resmi dengan lisensi yang valid. Kami bermitra dengan berbagai platform untuk menyediakan akun premium dengan harga lebih terjangkau."
+        },
+        {
+          "question": "Berapa lama akun akan aktif?",
+          "answer": "Akun premium yang Anda beli akan aktif sesuai dengan paket yang dipilih. Untuk pembelian 1 tahun, akun akan aktif selama 12 bulan penuh."
+        },
+        {
+          "question": "Bagaimana jika akun bermasalah?",
+          "answer": "Kami memberikan garansi replace gratis selama 30 hari. Jika ada masalah dengan akun, segera hubungi customer service kami untuk penggantian."
+        },
+        {
+          "question": "Metode pembayaran apa saja yang tersedia?",
+          "answer": "Kami menerima pembayaran melalui transfer bank, e-wallet (OVO, GoPay, DANA), dan berbagai metode pembayaran digital lainnya."
+        }
+      ]
+    };
+
+    // Shopping cart state
+    let cart = [];
+
+    // DOM elements
+    const productsGrid = document.getElementById('productsGrid');
+    const benefitsGrid = document.getElementById('benefitsGrid');
+    const testimonialsGrid = document.getElementById('testimonialsGrid');
+    const faqList = document.getElementById('faqList');
+    const cartBtn = document.getElementById('cartBtn');
+    const cartCount = document.getElementById('cartCount');
+    const cartModal = document.getElementById('cartModal');
+    const productModal = document.getElementById('productModal');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const successModal = document.getElementById('successModal');
+
+    // Utility functions
+    function formatPrice(price) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+      }).format(price);
+    }
+
+    function generateStars(rating) {
+      const fullStars = Math.floor(rating);
+      const hasHalfStar = rating % 1 !== 0;
+      let stars = '';
+
+      for (let i = 0; i < fullStars; i++) {
+        stars += '⭐';
+      }
+      if (hasHalfStar) {
+        stars += '⭐';
+      }
+
+      return stars;
+    }
+
+    // Helper to convert duration key to readable text
+    function getDurationText(key) {
+        // Handle complex keys like "Sharing-1_hari" or "Private-1_bulan"
+        if (key.includes('-')) {
+            const parts = key.split('-');
+            let type = parts[0];
+            let duration = parts.slice(1).join('-'); // Join back if duration itself has hyphens
+
+            let durationText = '';
+            switch(duration) {
+                case '1_hari': durationText = '1 HARI'; break;
+                case '3_hari': durationText = '3 HARI'; break;
+                case '5_hari': durationText = '5 HARI'; break;
+                case '7_hari': durationText = '7 HARI'; break; // Added 7_hari
+                case '1_minggu': durationText = '1 MINGGU'; break;
+                case '1_bulan': durationText = '1 BULAN'; break;
+                case '2_bulan': durationText = '2 BULAN'; break; // Added 2_bulan
+                case '3_bulan': durationText = '3 BULAN'; break;
+                case '6_bulan': durationText = '6 BULAN'; break;
+                case '1_tahun': durationText = '1 TAHUN'; break;
+                case '1_Tahun': durationText = '1 TAHUN'; break; // Handle inconsistent casing
+                case '5P': durationText = '5 Pengguna'; break; // For Netflix
+                case '1P1U': durationText = '1 Pengguna 1 Unit'; break; // For Netflix
+                case '5u': durationText = '5 Pengguna'; break; // For Amazon Prime
+                case '6U': durationText = '6 Pengguna'; break; // For WeTV
+                case '2u': durationText = '2 Pengguna'; break; // For Vidio Mobile
+                default: durationText = duration.replace(/_/g, ' ').toUpperCase(); // Replace all underscores
+            }
+            return `${type} (${durationText})`;
+        }
+
+        // Handle simple keys (for products with flat price structures)
+        switch(key) {
+            case '1_hari': return '1 HARI';
+            case '3_hari': return '3 HARI';
+            case '5_hari': return '5 HARI';
+            case '7_hari': return '7 HARI';
+            case '1_minggu': return '1 MINGGU';
+            case '1_bulan': return '1 BULAN';
+            case '2_bulan': return '2 BULAN';
+            case '3_bulan': return '3 BULAN';
+            case '6_bulan': return '6 BULAN';
+            case '1_tahun': return '1 TAHUN';
+            case '1_Tahun': return '1 TAHUN';
+            case 'single_price': return 'Harga'; // Untuk produk dengan harga tunggal
+            case '1 kali cek': return '1 KALI CEK';
+            case '5 kali cek': return '5 KALI CEK';
+            default: return key.replace(/_/g, ' ').toUpperCase();
+        }
+    }
+
+
+    // Initialize application
+    function init() {
+      renderProducts();
+      renderBenefits();
+      renderTestimonials();
+      renderFAQ();
+      setupEventListeners();
+      setupSmoothScrolling();
+      updateCartUI(); // Ensure cart count is updated on load
+    }
+
+    // Render products
+    function renderProducts() {
+      const productsHTML = appData.products.map(product => {
+        // Get the lowest price for initial display on product card
+        let lowestPrice = product.originalPrice; // Default to originalPrice
+
+        if (typeof product.prices === 'object' && !Array.isArray(product.prices)) {
+            if (Object.keys(product.prices).length > 0) {
+                let allPrices = [];
+                // Check if it's a nested price structure (e.g., Capcut Pro)
+                if (typeof Object.values(product.prices)[0] === 'object') {
+                    for (const type in product.prices) {
+                        allPrices = allPrices.concat(Object.values(product.prices[type]));
+                    }
+                } else {
+                    // Flat object price structure (e.g., Canva Pro)
+                    allPrices = Object.values(product.prices);
+                }
+                if (allPrices.length > 0) {
+                    lowestPrice = Math.min(...allPrices);
+                }
+            }
+        } else if (typeof product.prices === 'number') {
+            lowestPrice = product.prices; // Single price (e.g., Turnitin)
+        }
+
+        const originalPriceDisplay = product.originalPrice; // This will be the price displayed
+
+        return `
+        <div class="product-card bounce-in" data-product-id="${product.id}">
+          <img src="${product.image}" alt="${product.name}" class="product-card__image">
+          <div class="product-card__content">
+            <div class="product-card__header">
+              <h3 class="product-card__title">${product.name}</h3>
+              <div class="product-card__rating">
+                <span>${generateStars(product.rating)}</span>
+                <span>${product.rating} (${product.reviews})</span>
+              </div>
+            </div>
+            <p class="product-card__description">${product.description}</p>
+            <div class="product-card__pricing">
+              <span class="price--original">${formatPrice(originalPriceDisplay)}</span>
+            </div>
+            <ul class="product-card__features">
+              ${product.features.slice(0, 3).map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+            <div class="product-card__actions">
+              <button class="btn btn--secondary view-product-btn" data-product-id="${product.id}">
+                Lihat Detail
+              </button>
+              <!-- Tombol "Tambah ke Keranjang" di sini akan ditangani oleh modal -->
+              <!-- Untuk tampilan awal, bisa dihilangkan atau diubah menjadi "Pilih Opsi" -->
+            </div>
+          </div>
+        </div>
+      `;
+      }).join('');
+
+      productsGrid.innerHTML = productsHTML;
+    }
+
+    // Render benefits
+    function renderBenefits() {
+      const benefitsHTML = appData.benefits.map(benefit => `
+        <div class="benefit-card">
+          <div class="benefit-card__icon">${benefit.icon}</div>
+          <h3 class="benefit-card__title">${benefit.title}</h3>
+          <p class="benefit-card__description">${benefit.description}</p>
+        </div>
+      `).join('');
+
+      benefitsGrid.innerHTML = benefitsHTML;
+    }
+
+    // Render testimonials
+    function renderTestimonials() {
+      const testimonialsHTML = appData.testimonials.map(testimonial => `
+        <div class="testimonial-card slide-in-left">
+          <div class="testimonial-card__header">
+            <img src="${testimonial.avatar}" alt="${testimonial.name}" class="testimonial-card__avatar">
+            <div class="testimonial-card__info">
+              <h4>${testimonial.name}</h4>
+              <p>${testimonial.role}</p>
+            </div>
+          </div>
+          <div class="testimonial-card__rating">${generateStars(testimonial.rating)}</div>
+          <p class="testimonial-card__text">"${testimonial.text}"</p>
+        </div>
+      `).join('');
+
+      testimonialsGrid.innerHTML = testimonialsHTML;
+    }
+
+    // Render FAQ
+    function renderFAQ() {
+      const faqHTML = appData.faq.map((item, index) => `
+        <div class="faq-item" data-faq-index="${index}">
+          <button class="faq-item__question">
+            ${item.question}
+            <span class="faq-item__toggle">▼</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>${item.answer}</p>
+          </div>
+        </div>
+      `).join('');
+
+      faqList.innerHTML = faqHTML;
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+      // Product actions (delegated event listener for dynamically added buttons)
+      productsGrid.addEventListener('click', (e) => {
+        if (e.target.classList.contains('view-product-btn')) {
+          const productId = parseInt(e.target.dataset.productId);
+          showProductModal(productId);
+        }
+      });
+
+      // Cart modal
+      cartBtn.addEventListener('click', () => showModal('cartModal'));
+
+      // Modal close buttons
+      document.querySelectorAll('.modal__close').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const modal = e.target.closest('.modal');
+          hideModal(modal.id);
+        });
+      });
+
+      // Modal background click
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            hideModal(modal.id);
+          }
+        });
+      });
+
+      // Cart actions
+      document.getElementById('continueShoppingBtn').addEventListener('click', () => {
+        hideModal('cartModal');
+      });
+
+      document.getElementById('checkoutBtn').addEventListener('click', () => {
+        if (cart.length === 0) {
+          alert('Keranjang belanja kosong!');
+          return;
+        }
+        hideModal('cartModal');
+        showCheckoutModal();
+      });
+
+      // Checkout form
+      document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
+
+      // FAQ accordion
+      faqList.addEventListener('click', handleFAQClick);
+    }
+
+    // Add to cart
+    function addToCart(productId, durationKey) {
+      const product = appData.products.find(p => p.id === productId);
+      if (!product) {
+          console.error('Produk tidak ditemukan:', productId);
+          return;
+      }
+
+      let salePrice;
+      let productNameWithDuration;
+
+      // Determine salePrice based on product.prices structure
+      if (typeof product.prices === 'object' && !Array.isArray(product.prices)) {
+          const parts = durationKey.split('-');
+          if (parts.length > 1 && product.prices[parts[0]] && typeof product.prices[parts[0]] === 'object') {
+              // Nested structure (e.g., Capcut Pro: "Private-1_bulan")
+              const type = parts[0];
+              const duration = parts.slice(1).join('-');
+              salePrice = product.prices[type][duration];
+              productNameWithDuration = `${product.name} (${getDurationText(durationKey)})`;
+          } else {
+              // Flat object structure (e.g., Canva Pro: "1_bulan")
+              salePrice = product.prices[durationKey];
+              productNameWithDuration = `${product.name} (${getDurationText(durationKey)})`;
+          }
+      } else if (typeof product.prices === 'number') {
+          // Single price (e.g., Turnitin: "single_price")
+          salePrice = product.prices;
+          productNameWithDuration = product.name; // No duration needed for name
+          durationKey = 'single_price'; // Ensure consistent key for single price products
+      } else {
+          console.error('Struktur harga tidak dikenal untuk produk:', product.name);
+          return;
+      }
+
+      if (salePrice === undefined) {
+          console.error(`Harga untuk durasi "${durationKey}" tidak ditemukan untuk produk "${product.name}"`);
+          alert('Terjadi kesalahan: Harga untuk opsi yang dipilih tidak ditemukan.');
+          return;
+      }
+
+      const cartItemIdentifier = `${productId}-${durationKey}`; // Unique identifier for item in cart
+
+      const existingItem = cart.find(item => item.identifier === cartItemIdentifier);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+            id: productId,
+            identifier: cartItemIdentifier,
+            name: productNameWithDuration,
+            salePrice: salePrice,
+            quantity: 1,
+            durationKey: durationKey // Store duration key for reference
+        });
+      }
+
+      updateCartUI();
+      showNotification(`${productNameWithDuration} ditambahkan ke keranjang!`);
+    }
+
+    // Remove from cart
+    function removeFromCart(itemIdentifier) {
+      cart = cart.filter(item => item.identifier !== itemIdentifier);
+      updateCartUI();
+      renderCartItems();
+    }
+
+    // Update cart UI
+    function updateCartUI() {
+      cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    }
+
+    // Show product modal
+    function showProductModal(productId) {
+      const product = appData.products.find(p => p.id === productId);
+      if (!product) {
+          console.error('Produk tidak ditemukan untuk modal:', productId);
+          return;
+      }
+
+      const modalTitle = document.getElementById('productModalTitle');
+      const modalContent = document.getElementById('productModalContent');
+
+      modalTitle.textContent = product.name;
+
+      let pricingOptionsHTML = '';
+      let defaultCheckedKey = ''; // To store the key of the first option to be checked by default
+
+      // Determine pricing options based on product.prices structure
+      if (typeof product.prices === 'object' && !Array.isArray(product.prices)) {
+          if (Object.keys(product.prices).length > 0) {
+              const firstPriceTypeKey = Object.keys(product.prices)[0];
+
+              if (typeof product.prices[firstPriceTypeKey] === 'object') {
+                  // Nested structure (e.g., Capcut Pro, HBO GO)
+                  for (const type in product.prices) {
+                      pricingOptionsHTML += `<h4>${type}:</h4><div class="product-detail__pricing-options">`;
+                      const durationKeys = Object.keys(product.prices[type]);
+                      if (durationKeys.length > 0 && !defaultCheckedKey) {
+                          defaultCheckedKey = `${type}-${durationKeys[0]}`; // Set first option of first type as default
+                      }
+
+                      durationKeys.forEach(durationKey => {
+                          const price = product.prices[type][durationKey];
+                          const fullKey = `${type}-${durationKey}`;
+                          const durationText = getDurationText(fullKey);
+                          pricingOptionsHTML += `
+                              <input type="radio" id="duration-${productId}-${fullKey}" name="productDuration" value="${fullKey}" ${fullKey === defaultCheckedKey ? 'checked' : ''}>
+                              <label for="duration-${productId}-${fullKey}">
+                                  ${durationText.replace(`${type} (`, '').replace(')', '')}: <span>${formatPrice(price)}</span>
+                              </label>
+                          `;
+                      });
+                      pricingOptionsHTML += `</div>`;
+                  }
+              } else {
+                  // Flat object structure (e.g., Canva Pro)
+                  pricingOptionsHTML += `<h4>Pilih Durasi:</h4><div class="product-detail__pricing-options">`;
+                  const durationKeys = Object.keys(product.prices);
+                  if (durationKeys.length > 0 && !defaultCheckedKey) {
+                      // Prioritize '1_bulan' if available, otherwise first key
+                      defaultCheckedKey = durationKeys.includes('1_bulan') ? '1_bulan' : durationKeys[0];
+                  }
+
+                  durationKeys.forEach(durationKey => {
+                      const price = product.prices[durationKey];
+                      const durationText = getDurationText(durationKey);
+                      pricingOptionsHTML += `
+                          <input type="radio" id="duration-${productId}-${durationKey}" name="productDuration" value="${durationKey}" ${durationKey === defaultCheckedKey ? 'checked' : ''}>
+                          <label for="duration-${productId}-${durationKey}">
+                              ${durationText}: <span>${formatPrice(price)}</span>
+                          </label>
+                      `;
+                  });
+                  pricingOptionsHTML += `</div>`;
+              }
+          }
+      } else if (typeof product.prices === 'number') {
+          // Single price (e.g., Turnitin, Unlock Docs)
+          const price = product.prices;
+          const durationKey = 'single_price'; // Dummy key for single price
+          defaultCheckedKey = durationKey; // Set as default
+          pricingOptionsHTML += `<h4>Harga:</h4><div class="product-detail__pricing-options">
+              <input type="radio" id="duration-${productId}-${durationKey}" name="productDuration" value="${durationKey}" checked>
+              <label for="duration-${productId}-${durationKey}">
+                  Harga: <span>${formatPrice(price)}</span>
+              </label>
+          </div>`;
+      } else {
+          console.error('Struktur harga tidak dikenal untuk produk:', product.name);
+          pricingOptionsHTML = '<p>Opsi harga tidak tersedia.</p>';
+      }
+
+
+      modalContent.innerHTML = `
+        <div class="product-detail">
+          <img src="${product.image}" alt="${product.name}" style="width: 100%; max-width: 400px; border-radius: 8px; margin-bottom: 20px;">
+          <div class="product-detail__info">
+            <div class="product-card__rating" style="margin-bottom: 16px;">
+              <span>${generateStars(product.rating)}</span>
+              <span>${product.rating} (${product.reviews} ulasan)</span>
+            </div>
+            <p style="margin-bottom: 20px; line-height: 1.6;">${product.description}</p>
+
+            ${pricingOptionsHTML}
+
+            <h4>Fitur yang Didapat:</h4>
+            <ul class="product-card__features">
+              ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+            <div style="margin-top: 24px;">
+              <button class="btn btn--primary btn--full-width add-to-cart-modal-btn" data-product-id="${product.id}">
+                Tambah ke Keranjang
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Add event listener for the "Tambah ke Keranjang" button inside the modal
+      // This must be done AFTER the modal content is rendered
+      const addToCartModalBtn = document.querySelector('#productModal .add-to-cart-modal-btn');
+      if (addToCartModalBtn) {
+          addToCartModalBtn.addEventListener('click', () => {
+              const selectedDurationRadio = document.querySelector('input[name="productDuration"]:checked');
+              if (selectedDurationRadio) {
+                  const selectedDuration = selectedDurationRadio.value;
+                  addToCart(productId, selectedDuration);
+                  hideModal('productModal'); // Close modal after adding to cart
+              } else {
+                  alert('Mohon pilih durasi terlebih dahulu.');
+              }
+          });
+      }
+
+      showModal('productModal');
+    }
+
+    // Show checkout modal
+    function showCheckoutModal() {
+      renderOrderSummary();
+      showModal('checkoutModal');
+    }
+
+    // Render cart items
+    function renderCartItems() {
+      const cartItems = document.getElementById('cartItems');
+      const cartTotal = document.getElementById('cartTotal');
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p style="text-align: center; color: var(--color-text-secondary); padding: 20px;">Keranjang belanja kosong</p>';
+        cartTotal.textContent = formatPrice(0);
+        return;
+      }
+
+      const cartHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item__info">
+            <h4>${item.name}</h4>
+            <p>Jumlah: ${item.quantity}</p>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <span class="cart-item__price">${formatPrice(item.salePrice * item.quantity)}</span>
+            <button class="cart-item__remove" onclick="removeFromCart('${item.identifier}')">Hapus</button>
+          </div>
+        </div>
+      `).join('');
+
+      cartItems.innerHTML = cartHTML;
+
+      const total = cart.reduce((sum, item) => sum + (item.salePrice * item.quantity), 0);
+      cartTotal.textContent = formatPrice(total);
+    }
+
+    // Render order summary
+    function renderOrderSummary() {
+      const orderSummary = document.getElementById('orderSummary');
+
+      const summaryHTML = cart.map(item => `
+        <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+          <span>${item.name} x${item.quantity}</span>
+          <span>${formatPrice(item.salePrice * item.quantity)}</span>
+        </div>
+      `).join('');
+
+      const total = cart.reduce((sum, item) => sum + (item.salePrice * item.quantity), 0);
+
+      orderSummary.innerHTML = `
+        ${summaryHTML}
+        <hr style="margin: 16px 0; border: none; border-top: 1px solid var(--color-border);">
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 18px;">
+          <span>Total:</span>
+          <span>${formatPrice(total)}</span>
+        </div>
+      `;
+    }
+
+    // MODIFIKASI: GANTI DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA YANG SUDAH DI-DEPLOY
+    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxLB_FcmfuUAICA7_YTS7ePZhaTHahAoPZxs-PIwSTIj1_2VUmP9vXrSlQARj-jUVRbHA/exec';
+
+    // Handle checkout
+    function handleCheckout(e) {
+      e.preventDefault();
+
+      const customerName = document.getElementById('customerName').value.trim();
+      const customerEmail = document.getElementById('customerEmail').value.trim();
+      const customerPhone = document.getElementById('customerPhone').value.trim();
+      const customerCityProvince = document.getElementById('customerCityProvince').value.trim();
+      const customerDevice = document.getElementById('customerDevice').value.trim();
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value; // Use optional chaining
+
+      // Basic form validation
+      if (!customerName || !customerEmail || !customerPhone || !customerCityProvince || !customerDevice || !paymentMethod) {
+        alert('Mohon lengkapi semua data yang diperlukan!');
+        return;
+      }
+
+      // Prepare order data to send
+      const productsOrdered = cart.map(item => ({
+          name: item.name,
+          quantity: item.quantity,
+          salePrice: item.salePrice,
+          salePriceFormatted: formatPrice(item.salePrice)
+      }));
+
+      const total = cart.reduce((sum, item) => sum + (item.salePrice * item.quantity), 0);
+      const totalPriceFormatted = formatPrice(total);
+
+      const formDataToSend = new FormData();
+      formDataToSend.append('customerName', customerName);
+      formDataToSend.append('customerEmail', customerEmail);
+      formDataToSend.append('customerPhone', customerPhone);
+      formDataToSend.append('customerCityProvince', customerCityProvince);
+      formDataToSend.append('customerDevice', customerDevice);
+      formDataToSend.append('paymentMethod', paymentMethod);
+      formDataToSend.append('productsOrdered', JSON.stringify(productsOrdered));
+      formDataToSend.append('totalPrice', totalPriceFormatted);
+
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Memproses Pesanan...';
+      submitBtn.disabled = true;
+
+      // Send data to Google Apps Script
+      fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: formDataToSend
+      })
+      .then(response => {
+        if (!response.ok) {
+          // Handle non-2xx HTTP responses
+          throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (data.success) {
+          console.log('Pesanan berhasil disimpan dan email dikirim:', data.message);
+          cart = []; // Clear cart after successful order
+          updateCartUI();
+          document.getElementById('checkoutForm').reset(); // Reset form fields
+
+          hideModal('checkoutModal');
+          showModal('successModal');
+        } else {
+          console.error('Gagal menyimpan pesanan:', data.message);
+          alert('Terjadi kesalahan saat memproses pesanan. Mohon coba lagi atau hubungi admin. Pesan: ' + (data.message || 'Unknown error.'));
+        }
+      })
+      .catch(error => {
+        console.error('Error saat mengirim data:', error);
+        alert('Terjadi kesalahan jaringan atau server. Mohon coba lagi atau hubungi admin. Detail: ' + error.message);
+      })
+      .finally(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      });
+    }
+
+    // Handle FAQ clicks
+    function handleFAQClick(e) {
+      if (e.target.classList.contains('faq-item__question')) {
+        const faqItem = e.target.closest('.faq-item');
+        if (!faqItem) return; // Ensure faqItem exists
+
+        const isActive = faqItem.classList.contains('active');
+
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      }
+    }
+
+    // Modal functions
+    function showModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('active');
+        if (modalId === 'cartModal') {
+          renderCartItems();
+        }
+      } else {
+        console.error(`Modal dengan ID "${modalId}" tidak ditemukan.`);
+      }
+    }
+
+    function hideModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('active');
+      }
+    }
+
+    // Show notification
+    function showNotification(message) {
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--color-success);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        z-index: 3000;
+        font-weight: 500;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      `;
+      notification.textContent = message;
+
+      document.body.appendChild(notification);
+
+      // Animate in
+      setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+      }, 100);
+
+      // Remove after 3 seconds
+      setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 3000);
+    }
+
+    // Setup smooth scrolling
+    function setupSmoothScrolling() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    }
+
+    // Initialize app when DOM is loaded
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
